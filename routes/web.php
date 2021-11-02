@@ -16,3 +16,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/me', function () {
+    return 'this is my home';
+});
+
+Route::get('me/{name?}', function($name){
+    return "Hi $name!";
+});
+
+Route::redirect('/home','/me',301);
+
+Route::get('my/{name}', function($name){
+    return "Hi $name!";
+});
+
+
