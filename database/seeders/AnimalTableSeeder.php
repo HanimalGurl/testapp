@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Animal;
 
 class AnimalTableSeeder extends Seeder
 {
@@ -13,6 +14,9 @@ class AnimalTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $a = new Animal;
+        $a->name = "Leo";
+        $a->weight = 66.2;
+        $a->save();
     }
 }
