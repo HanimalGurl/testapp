@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class EmergencyContact extends Model
 {
     use HasFactory;
+
+    public function animal()
+    {
+        return $this->belongsTo(Animal::class);
+    }
 }
