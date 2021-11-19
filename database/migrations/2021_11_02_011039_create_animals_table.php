@@ -18,8 +18,11 @@ class CreateAnimalsTable extends Migration
             $table->string('name');
             $table->double('weight', 8, 2);
             $table->dateTime('date_of_birth')->nullable();
+            $table->bigInteger('enclosure_id')->unsigned();
             $table->timestamps();
 
+            $table->foreign('enclosure_id')->references('id')->on('enclosures')
+            ->onDelete('cascade')->onUpdate('cascade');
 
         });
     }
